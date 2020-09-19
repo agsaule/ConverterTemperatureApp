@@ -1,24 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rau-JI-B8I">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CF Converter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ConverterTemperatureApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="sMS-D1-vfw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0° C" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xq2-cZ-Tn4">
+                                <rect key="frame" x="179.5" y="347" width="55" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="100" minimumValueImage="sun.min" catalog="system" maximumValueImage="sun.max.fill" translatesAutoresizingMaskIntoConstraints="NO" id="ASw-12-xOQ">
+                                <rect key="frame" x="40" y="433" width="334" height="31"/>
+                                <color key="tintColor" red="0.8337442799" green="0.53032718359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="minimumTrackTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.83374427987203548" green="0.53032718355100528" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cOi-os-EmZ"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0° F" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tch-lj-dtt">
+                                <rect key="frame" x="180" y="513" width="54" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-D6-k3l">
+                                <rect key="frame" x="49.5" y="168" width="315" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Tch-lj-dtt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="18X-gW-eck"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sMS-D1-vfw" secondAttribute="trailing" id="4kF-uc-udS">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-44"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-44"/>
+                            </constraint>
+                            <constraint firstItem="ASw-12-xOQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Wh-0J-vKU"/>
+                            <constraint firstItem="UE9-D6-k3l" firstAttribute="leading" secondItem="Xq2-cZ-Tn4" secondAttribute="trailing" constant="23.5" id="CTl-F6-s9g"/>
+                            <constraint firstItem="sMS-D1-vfw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E6x-PL-CKI">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-44"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-44"/>
+                            </constraint>
+                            <constraint firstItem="UE9-D6-k3l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="EEG-cq-zAN"/>
+                            <constraint firstItem="UE9-D6-k3l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="Gis-gf-7bs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UE9-D6-k3l" secondAttribute="trailing" constant="20" id="I5L-XO-qO2"/>
+                            <constraint firstItem="Xq2-cZ-Tn4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MHA-YE-qC4"/>
+                            <constraint firstItem="Xq2-cZ-Tn4" firstAttribute="leading" secondItem="UE9-D6-k3l" secondAttribute="trailing" constant="19.5" id="Pka-bg-J4a"/>
+                            <constraint firstItem="UE9-D6-k3l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QpW-L1-PPY"/>
+                            <constraint firstItem="Tch-lj-dtt" firstAttribute="top" secondItem="ASw-12-xOQ" secondAttribute="bottom" constant="50" id="U42-iP-bll"/>
+                            <constraint firstItem="UE9-D6-k3l" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W0h-Y8-zyc"/>
+                            <constraint firstItem="UE9-D6-k3l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="WYq-jJ-9hw"/>
+                            <constraint firstItem="ASw-12-xOQ" firstAttribute="top" secondItem="Xq2-cZ-Tn4" secondAttribute="bottom" constant="50" id="Zei-Rr-UIp"/>
+                            <constraint firstItem="ASw-12-xOQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="cBo-a0-C26"/>
+                            <constraint firstItem="UE9-D6-k3l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="fIL-UQ-KU3"/>
+                            <constraint firstItem="sMS-D1-vfw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="83" id="hBq-Yu-EpU">
+                                <variation key="heightClass=compact-widthClass=regular" constant="21"/>
+                            </constraint>
+                            <constraint firstItem="ASw-12-xOQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jhS-Cg-tAS"/>
+                            <constraint firstItem="Xq2-cZ-Tn4" firstAttribute="leading" secondItem="UE9-D6-k3l" secondAttribute="trailing" constant="17.5" id="nae-Uu-ejU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="sMS-D1-vfw" secondAttribute="top" constant="88" id="uuV-XH-C1c">
+                                <variation key="heightClass=compact-widthClass=regular" constant="44"/>
+                            </constraint>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="I5L-XO-qO2"/>
+                                <exclude reference="CTl-F6-s9g"/>
+                                <exclude reference="EEG-cq-zAN"/>
+                                <exclude reference="Gis-gf-7bs"/>
+                                <exclude reference="QpW-L1-PPY"/>
+                                <exclude reference="fIL-UQ-KU3"/>
+                                <exclude reference="Pka-bg-J4a"/>
+                                <exclude reference="nae-Uu-ejU"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="I5L-XO-qO2"/>
+                                <exclude reference="CTl-F6-s9g"/>
+                                <include reference="QpW-L1-PPY"/>
+                                <exclude reference="W0h-Y8-zyc"/>
+                                <exclude reference="WYq-jJ-9hw"/>
+                                <include reference="fIL-UQ-KU3"/>
+                                <include reference="nae-Uu-ejU"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="EEG-cq-zAN"/>
+                                <include reference="Gis-gf-7bs"/>
+                                <exclude reference="W0h-Y8-zyc"/>
+                                <exclude reference="WYq-jJ-9hw"/>
+                                <include reference="Pka-bg-J4a"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="CF Converter" id="Gp1-aS-l9d">
+                        <barButtonItem key="leftBarButtonItem" title="info" id="rGr-v7-Xmi">
+                            <color key="tintColor" red="0.78515591770000004" green="0.36334870219999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="dark mode" id="6FD-Jg-PiA">
+                            <color key="tintColor" red="0.78515591770000004" green="0.36334870219999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="Xq2-cZ-Tn4" id="Yig-vj-Lre"/>
+                        <outlet property="fahrenheitLabel" destination="Tch-lj-dtt" id="yow-tS-671"/>
+                        <outlet property="tempSlider" destination="ASw-12-xOQ" id="DtY-Vl-r1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1043.4782608695652" y="109.82142857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qoB-gf-05R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rau-JI-B8I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ixh-Lz-PHX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kJs-fI-tqS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XX-PS-KQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="day" width="375" height="667"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
+        <image name="sun.min" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
